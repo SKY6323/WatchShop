@@ -11,15 +11,15 @@ const ProductAll = () => {
     //json-server에 있는 db.json 데이터(API) 요청
     const getProduts = async() =>{
         try{
-            let searchQuery = query.get('q')||'';
-            let url = `http://localhost:5000/products?q=${searchQuery}`
+            let keyword = query.get('q') || '';
+            let url = `https://my-json-server.typicode.com/SKY6323/WatchShop/products/${keyword}`
             let response = await fetch(url);
             let data = await response.json();
             
             //console.log(data)
             if(data.length < 1) {
-                if(searchQuery  !== ""){
-                    setError(`${searchQuery}와 일치하는 상품이 없습니다.`)
+                if(keyword  !== ""){
+                    setError(`${keyword}와 일치하는 상품이 없습니다.`)
                 }else{
                     throw new Error("결과가 없습니다.")
                 }
