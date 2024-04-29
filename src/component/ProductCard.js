@@ -8,7 +8,7 @@ export const ProductCard = ({item}) => {
   const isnew = !!item?.new;
   const navigate = useNavigate();
   const showDetail = () => {
-    navigate(`/products/${item.id}`)
+    navigate(`/product/${item.id}`)
   }
 
   return (

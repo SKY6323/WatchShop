@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 export const ProductDetail = () => {
   let { id } = useParams();
   const [product, setProduct] = useState(null);
-  console.log(product)
   const getProductDetail = async () => {
     /* let url = `https://my-json-server.typicode.com/HeoSsaM/peachnlily/products/${id}`; */
     let url = `https://my-json-server.typicode.com/SKY6323/WatchShop/products/${id}`;
@@ -14,9 +13,11 @@ export const ProductDetail = () => {
     console.log(data);
     setProduct(data);
   };
+
   useEffect(() => {
     getProductDetail();
   }, []);
+
   return (
     <div>
       <Row className="product-detail">
