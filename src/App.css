@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+/* Navbar */
+.header{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login_section{
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.login_section li{
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+}
+.login_section li + li::before{
+  content: '';
+  position: absolute;
+  top: 6px; left: -10px;
+  width: 1px; height: 15px;
+  background: #000;
+}
+.login_section li a{
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.login_section li button{
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+}
+.logo_section figure{
+  height: 80px;
+  overflow: hidden;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.gnb_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.gnb_section .gnb{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  list-style-type: none;
+  gap: 50px;
+}
+.search_area{
+  position: absolute;
+  right: 0;
+  width: 200px;
+}
+.search_area .search_box{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%; height: 36px;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.search_box input{
+  width: 160px; height: 36px;
+  margin-left: 5px;
+  padding-left: 5px; box-sizing: border-box;
+  border: none;
+}
+.search_box input:focus{outline: none;}
+
+/* Product */
+.product_info{position: relative;}
+.product_list .product_info figure{
+  width: 100%; height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+.product_list .product_info figure::after{
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  width: 0; height: 3px;
+  background: #000;
+  transition: all 0.3s
+}
+.product_list .product_info figure:hover::after{
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  width: 100%; height: 3px;
+  background: #000;
+}
+.product_list .product_info figure:hover img{transform: scale(1.3);}
+.product_list .product_info img{
+  transition: all 0.3s;
+  width: 100%;
+}
+.product_list .product_info{margin-bottom: 60px;}
+.product_list .item_new{
+  position: absolute;
+  top: 0; left: 0px;
+  font-size: 0.85em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  padding: 3px 6px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Login */
+.login_area {
+  width: 50%;
+  margin: 80px auto 0;
+  border: 2px solid #000;
+  padding: 30px 30px; box-sizing: border-box;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login_area > div{
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 80px 80px; box-sizing: border-box;
 }
+.login_area h3{
+  font-size: 30px;
+  font-family: "Pretendard Variable",sans-serif;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #000;
+}
+.login_area label{
+  margin-bottom: 50px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.login_area label input{
+  width: 100%; height: 50px;
+  font-size: 17px;
+  padding-left: 5px; box-sizing: border-box;
+  border: none;
+}
+.login_area label input:focus{outline: none;}
+.login_area  .btn_area{text-align: center;}
+.login_area button{
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px; box-sizing: border-box;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.login_area button:hover{background: #000; color: #fff;}
